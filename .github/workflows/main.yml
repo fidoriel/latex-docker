@@ -39,7 +39,7 @@ jobs:
 
       - name: Docker meta
         id: meta
-        uses: docker/metadata-action@v4
+        uses: docker/metadata-action@v5
         env:
           DOCKER_METADATA_PR_HEAD_SHA: true
         with:
@@ -52,7 +52,7 @@ jobs:
             type=raw,value=${{ steps.date.outputs.date }}
 
       - name: Build and push
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v5
         with:
           context: .
           file: Dockerfile
